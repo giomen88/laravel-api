@@ -16,3 +16,5 @@ use App\Models\Post;
 */
 
 Route::get('/posts', 'Api\PostController@index');
+
+Route::get('/posts/{id}', 'Api\PostController@show');

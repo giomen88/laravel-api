@@ -1,10 +1,19 @@
 <template>
   <div class="row">
-    <div class="col-12 text-center">
-      <div class="card">
-        <h2>{{ post.title }}</h2>
-        <img :src="post.image" :alt="post.title" />
-        <p>{{ post.content }}</p>
+    <div class="col-12">
+      <div class="card text-center">
+        <div class="card-header">
+          {{ post.category }}
+        </div>
+        <div class="card-body">
+          <h4 class="card-title">{{ post.title }}</h4>
+          <address>Autore: {{ post.user_id.name }}</address>
+          <p class="card-text">{{ post.content }}</p>
+          <router-link href="#" class="btn btn-primary">Apri</router-link>
+        </div>
+        <div class="card-footer text-muted">
+          Creato il: {{ post.created_at }}
+        </div>
       </div>
     </div>
   </div>
