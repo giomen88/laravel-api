@@ -38,7 +38,9 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        $post = Post::find($id);
+        $post = Post::with(['category', 'user'])->find($id);
+
+        if(!$post) return response('Not Found', 404);
 
         return response()->json($post);
     }
