@@ -1,4 +1,4 @@
-import Vue from 'Vue'
+import Vue from 'vue'
 import VueRouter from 'vue-router'
 
 import HomePage from './components/pages/HomePage';
@@ -10,9 +10,9 @@ Vue.use(VueRouter)
 const routes = new VueRouter({
     mode: 'history',
     routes: [
-        {path: '/', component: HomePage },
-        {path: '/about', component: AboutPage },
-        {path: '/contacts', component: ContactsPage },
+        {path: '/', component: HomePage, name: 'homepage' },
+        {path: '/about', component: AboutPage, name: 'aboutpage' },
+        {path: '/contacts', component: ContactsPage, name: 'contactspage' },
     ]
 });
 

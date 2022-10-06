@@ -68,8 +68,13 @@ class PostController extends Controller
         $post->fill($data);
 
         $post->slug = Str::slug($post->title, '-');
+        $post->user_id = Auth::id();
 
         $post->save();
+
+        if(array_key_exists('tags', $data)) {
+            $post->tags()->attach($data['tags']);
+        }
 
         return redirect()->route('admin.posts.show', $post)
         ->with('message', 'Il post è stato creato con successo')

@@ -16,15 +16,22 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <router-link class="nav-link active" aria-current="page" href="#"
+            <router-link
+              class="nav-link active"
+              aria-current="page"
+              :to="{ name: 'homepage' }"
               >Home</router-link
             >
           </li>
           <li class="nav-item">
-            <router-link class="nav-link" href="#">About</router-link>
+            <router-link class="nav-link" :to="{ name: 'aboutpage' }"
+              >About</router-link
+            >
           </li>
           <li class="nav-item">
-            <router-link class="nav-link" href="#">Contacts</router-link>
+            <router-link class="nav-link" :to="{ name: 'contactspage' }"
+              >Contacts</router-link
+            >
           </li>
         </ul>
       </div>
